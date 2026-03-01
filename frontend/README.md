@@ -1,16 +1,71 @@
-# React + Vite
+# React-Movie-App 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application **React + Vite** qui consomme l’API de **The Movie Database (TMDB)** pour :
+- afficher les films populaires,
+- rechercher des films,
+- gérer une liste de favoris (via un contexte React),
+- naviguer entre Home et Favorites avec React Router.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fonctionnalités
+- **Popular movies** : chargement de la liste des films populaires depuis TMDB.
+- **Search** : recherche par titre.
+- **Favorites** : ajout/suppression de favoris (gérés côté front via le contexte).
+- **Navigation** : routes :
+  - `/` → Home
+  - `/favorites` → Favorites
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Stack
+- **React**
+- **Vite**
+- **React Router DOM**
+- Fetch API (requêtes HTTP vers TMDB)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prérequis
+- **Node.js** : recommandé **20.19+** (Vite récent le demande souvent)
+- **npm**
+
+Vérifier :
+
+`node -v`
+`npm -v`
+
+## Configuration TMDB (obligatoire avant d’exécuter)
+
+L’app a besoin d’une clé API TMDB.
+
+1. Créer un compte sur TMDB : https://www.themoviedb.org/
+
+2. Aller dans Paramètres (Settings) → API
+
+3. Cliquer sur Generate / Créer une clé API
+
+4. Remplir le formulaire : TMDB donnera une API Key
+
+5. Ouvrir ce fichier dans le projet :
+
+`React-Movie-App/frontend/src/services/api.js
+
+6. Remplacer la valeur ici :
+
+const API_KEY = "ta_clé_api"
+
+## Installation & exécution
+
+Depuis la racine du repo :
+
+`cd frontend`
+`npm install`
+`npm run dev`
+
+Ensuite ouvrir l’URL affichée par Vite (http://localhost:5173).
+
+## Build (production)
+`cd frontend`
+`npm run build`
+`npm run preview`
