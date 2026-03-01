@@ -47,13 +47,10 @@ L’app a besoin d’une clé API TMDB.
 
 4. Remplir le formulaire : TMDB donnera une API Key
 
-5. Ouvrir ce fichier dans le projet :
+5. Dans le dossier `frontend`, créer un fichier **`.env`** et y mettre :
+`VITE_TMDB_API_KEY=ta_cle_api` => remplacer ta_cle_api par la clé générée par l'API
 
-`React-Movie-App/frontend/src/services/api.js
 
-6. Remplacer la valeur ici :
-
-const API_KEY = "ta_clé_api"
 
 ## Installation & exécution
 
@@ -65,7 +62,4 @@ Depuis la racine du repo :
 
 Ensuite ouvrir l’URL affichée par Vite (http://localhost:5173).
 
-## Build (production)
-`cd frontend`
-`npm run build`
-`npm run preview`
+
